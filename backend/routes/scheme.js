@@ -40,6 +40,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
+
 router.get('/:schemeId/documents/:documentName', async (req, res) => {
   try {
     const { schemeId, documentName } = req.params;
@@ -62,8 +63,6 @@ router.get('/:schemeId/documents/:documentName', async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
-
-
 
 // PATCH route to update scheme status by email and scheme name
 router.patch('/update-status/:email/:schemename', async (req, res) => {

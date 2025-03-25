@@ -9,9 +9,7 @@ const Login = () => {
   const [role, setRole] = useState("user");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const { setIsLoggedIn, setEmail: setAuthEmail } = useAuth(); // Destructure setEmail
-
-  // Fetch the email from local storage when the component mounts
+  const { setIsLoggedIn, setEmail: setAuthEmail } = useAuth(); 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
     if (storedEmail) {

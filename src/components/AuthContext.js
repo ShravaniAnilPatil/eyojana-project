@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [email, setEmail] = useState('');
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    setIsLoggedIn(!!token); // Set logged in state based on presence of token
+    setIsLoggedIn(!!token); 
     
 }, []);
 
