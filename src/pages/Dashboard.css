@@ -66,3 +66,42 @@ h2 {
   background-color: #f0f8ff; /* Light blue on hover */
   transition: background-color 0.3s; /* Smooth transition */
 }
+
+
+.scheme-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of cards */
+  gap: 15px; /* Space between cards */
+}
+
+.scheme-card {
+  background-color: #e0f7fa; /* Light blue background */
+  border: 1px solid #b2ebf2; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px;
+  width: 150px; /* Fixed width for cards */
+  text-align: center; /* Center text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s; /* Transition for hover effect */
+}
+
+.scheme-card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.filtered-scheme-names {
+  margin-top: 20px;
+}
+
+.filtered-scheme-names ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.filtered-scheme-names li {
+  margin: 5px 0; /* Space between list items */
+  background-color: #f4f4f4; /* Optional: Add a background color */
+  padding: 10px; /* Optional: Add padding for better appearance */
+  border-radius: 5px; /* Optional: Rounded corners */
+}

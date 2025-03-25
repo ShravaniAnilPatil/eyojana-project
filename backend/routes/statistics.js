@@ -30,4 +30,42 @@ router.get('/schemes/count', async (req, res) => {
     }
 });
 
+// Route to get all users
+router.get('/users', async (req, res) => {
+    try {
+        const users = await User.find({}); // Fetch all user data
+        res.json(users); // Return the user data
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching users' });
+    }
+});
+
+
+
+router.get('/filterscheme', async (req, res) => {
+    try {
+        // Extract query parameters for filtering
+        const { user_id, status } = req.query; // Use user_id to match frontend query
+
+        // Build the filter object
+        const filter = {};
+        if (user_id) {
+            filter.user_id = user_id; // Correct field name for user ID
+        }
+        if (status) {
+            filter.status = status; // Add status to the filter if provided
+        }
+
+        // Fetch schemes with relevant details based on filters
+        const schemes = await Scheme.find(filter).select('_id schemename user_id status'); // Ensure field names match your schema
+        res.json(schemes);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server Error', message: error.message }); // More informative error response
+    }
+});
+
+
+
+
 module.exports = router;
